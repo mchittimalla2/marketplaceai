@@ -42,7 +42,7 @@ a {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 40px 24px 28px;
+  padding: 40px 24px 70px;
   background:
     radial-gradient(circle at 50% 40%, rgba(66, 89, 255, 0.13), transparent 34%),
     linear-gradient(145deg, #03050d 0%, #080d21 48%, #050816 100%);
@@ -90,40 +90,36 @@ a {
 }
 
 .brand-animation {
+  --brand-height: clamp(88px, 10vw, 126px);
+  --brand-name-width: 440px;
+  --brand-compact-gap: clamp(5px, 1vw, 12px);
+  --brand-expanded-gap: clamp(12px, 2vw, 24px);
   display: flex;
   min-height: 145px;
   align-items: center;
   justify-content: center;
-  gap: clamp(10px, 2vw, 24px);
+  max-width: 100%;
 }
 
-.logo-letter {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: clamp(72px, 12vw, 150px);
-  font-weight: 800;
-  line-height: 0.9;
-  letter-spacing: -0.08em;
-  color: transparent;
-  background: linear-gradient(145deg, #ffffff 5%, #b8c7ff 48%, #58d8ff 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  filter: drop-shadow(0 0 28px rgba(93, 137, 255, 0.28));
-}
-
-.logo-i {
-  letter-spacing: 0;
+.brand-mark {
+  display: block;
+  flex: 0 0 auto;
+  height: var(--brand-height);
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 28px rgba(47, 111, 255, 0.24));
+  user-select: none;
 }
 
 .brand-center {
+  flex: 0 1 auto;
   overflow: hidden;
   white-space: nowrap;
 }
 
 .brand-name {
   display: block;
-  font-size: clamp(30px, 6vw, 72px);
+  font-size: clamp(30px, 5.2vw, 66px);
   font-weight: 650;
   letter-spacing: -0.055em;
   background: linear-gradient(90deg, #f7f9ff, #a9baff 55%, #6de6ff);
@@ -204,17 +200,16 @@ a {
   }
 
   .brand-animation {
+    --brand-height: clamp(64px, 14vw, 90px);
+    --brand-name-width: 310px;
+    --brand-expanded-gap: clamp(7px, 1.8vw, 12px);
     min-height: 110px;
-    gap: 8px;
   }
 
   .brand-name {
-    font-size: clamp(23px, 8vw, 46px);
+    font-size: clamp(24px, 7vw, 42px);
   }
 
-  .logo-letter {
-    font-size: clamp(56px, 18vw, 95px);
-  }
 
   .description {
     max-width: 520px;
@@ -223,17 +218,16 @@ a {
 
 @media (max-width: 460px) {
   .brand-animation {
-    gap: 5px;
+    --brand-height: clamp(52px, 14vw, 64px);
+    --brand-name-width: 190px;
+    --brand-expanded-gap: 6px;
   }
 
   .brand-name {
-    font-size: 22px;
+    font-size: clamp(20px, 6.2vw, 27px);
     letter-spacing: -0.04em;
   }
 
-  .logo-letter {
-    font-size: 58px;
-  }
 
   .tagline {
     max-width: 310px;
